@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara Meningkatkan IQ & Kapasitas Otak - Ferry Irwandi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .emoji {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .menu-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-title {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .menu-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-item {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(45deg, #5a6fd8, #6a42a0);
+        }
+
+        .menu-item.active {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        .menu-icon {
+            font-size: 1.1rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            position: relative;
+        }
+
+        .section h2::before {
+            content: attr(data-number);
+            position: absolute;
+            left: -40px;
+            top: -5px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .section p, .section li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .section ul {
+            margin-left: 20px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            margin: 15px 0;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .navigation {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .nav-dot {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #667eea;
+            transform: scale(1.5);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section h2::before {
+                display: none;
+            }
+            
+            .navigation {
+                display: none;
+            }
+
+            .menu-grid {
+                gap: 10px;
+            }
+
+            .menu-item {
+                font-size: 0.8rem;
+                padding: 10px 15px;
+            }
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-to-top:hover {
+            transform: scale(1.1);
+        }
+
+        .success-formula {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+            margin: 20px 0;
+        }
+
+        .example-box {
+            background: rgba(155, 89, 182, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #9b59b6;
+            margin: 15px 0;
+        }
+
+        .benefit-list {
+            background: rgba(46, 204, 113, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #2ecc71;
+            margin: 15px 0;
+        }
+
+        .game-list {
+            background: rgba(52, 152, 219, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="emoji">🧠</span>
+            <h1>Cara Meningkatkan IQ & Kapasitas Otak</h1>
+            <p>Panduan Lengkap ala Ferry Irwandi untuk Optimalisasi Potensi Otak</p>
+        </div>
+
+        <div class="menu-container">
+            <div class="menu-title">📋 Navigasi Cepat</div>
+            <div class="menu-grid">
+                <button class="menu-item active" onclick="scrollToSection('section1')" data-section="section1">
+                    <span class="menu-icon">🎯</span>
+                    Fokus IQ
+                </button>
+                <button class="menu-item" onclick="scrollToSection('section2')" data-section="section2">
+                    <span class="menu-icon">🎮</span>
+                    Game Strategis
+                </button>
+                <button class="menu-item" onclick="scrollToSection('section3')" data-section="section3">
+                    <span class="menu-icon">🧩</span>
+                    Teknik Chunking
+                </button>
+                <button class="menu-item" onclick="scrollToSection('section4')" data-section="section4">
+                    <span class="menu-icon">🎼</span>
+                    Alat Musik
+                </button>
+                <button class="menu-item" onclick="scrollToSection('section5')" data-section="section5">
+                    <span class="menu-icon">👥</span>
+                    Lingkungan Pintar
+                </button>
+                <button class="menu-item" onclick="scrollToSection('section6')" data-section="section6">
+                    <span class="menu-icon">📚</span>
+                    Pelajari Keraguan
+                </button>
+                <button class="menu-item" onclick="scrollToSection('section7')" data-section="section7">
+                    <span class="menu-icon">📈</span>
+                    Efek Jangka Panjang
+                </button>
+                <button class="menu-item" onclick="scrollToSection('section8')" data-section="section8">
+                    <span class="menu-icon">💡</span>
+                    Inti Pesan
+                </button>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="section active" id="section1">
+                <h2 data-number="🎯">Fokus bukan pada skor IQ, tapi optimalisasi otak</h2>
+                <p>Skor IQ hanyalah potensi mentah (raw potential). Yang penting adalah sejauh mana kita bisa memaksimalkan potensi itu.</p>
+                
+                <div class="highlight">
+                    <strong>Poin Penting:</strong>
+                    <ul>
+                        <li>Orang dengan IQ tinggi belum tentu berhasil jika tidak mengoptimalkannya</li>
+                        <li>Orang dengan IQ biasa saja bisa jauh lebih baik jika dia mencapai 100% dari potensinya</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="section2">
+                <h2 data-number="🎮">Bermain game strategis (Game Theory)</h2>
+                
+                <div class="game-list">
+                    <p><strong>🏆 Catur:</strong> Melatih logika, antisipasi, dan respon lawan.</p>
+                </div>
+
+                <div class="game-list">
+                    <p><strong>🎯 Mobile Legends / Dota:</strong> Jika dikelola dengan benar (tidak hanya nge-rank), bisa melatih:</p>
+                    <ul>
+                        <li>Map awareness</li>
+                        <li>Problem solving</li>
+                        <li>Strategi</li>
+                        <li>Adaptasi cepat dalam situasi</li>
+                    </ul>
+                </div>
+
+                <div class="game-list">
+                    <p><strong>⚔️ Game strategi real-time:</strong> Age of Empires, Civilization juga efektif.</p>
+                </div>
+            </div>
+
+            <div class="section" id="section3">
+                <h2 data-number="🧩">Teknik Chunking (Pengelompokan Informasi)</h2>
+                <p><strong>Tujuannya:</strong> agar informasi tidak langsung terbuang dari short-term memory.</p>
+                
+                <div class="highlight">
+                    <strong>Caranya:</strong>
+                    <ul>
+                        <li>Kelompokkan informasi ke dalam unit-unit kecil seperti "folder" (contoh: nomor HP → 0896-9696-9696)</li>
+                        <li>Terapkan juga dalam pelajaran kompleks: kelompokkan ekonomi menjadi "mikro, makro, teori produksi, dsb"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="section4">
+                <h2 data-number="🎼">Belajar alat musik (Bukan DJ controller!)</h2>
+                
+                <div class="benefit-list">
+                    <strong>Manfaat:</strong>
+                    <ul>
+                        <li>Melatih motorik, kognitif, auditori secara bersamaan</li>
+                        <li>Meningkatkan kerja otak secara harmonis</li>
+                        <li>Membantu meningkatkan kemampuan konsentrasi dan daya tahan berpikir</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="section5">
+                <h2 data-number="👥">Bergaul dengan orang pintar</h2>
+                <p>Tambah lingkungan pertemanan yang menantang pikiranmu.</p>
+                <p>Pilih teman yang bisa mendorongmu untuk berpikir, bertanya, dan memperluas wawasan.</p>
+            </div>
+
+            <div class="section" id="section6">
+                <h2 data-number="📚">Pelajari hal yang kamu ragukan</h2>
+                <p>Jangan hanya mengonfirmasi hal yang kamu yakini (menghindari confirmation bias).</p>
+                
+                <div class="example-box">
+                    <strong>Contoh:</strong>
+                    <ul>
+                        <li>Jika kamu percaya "bumi itu bulat", cari tahu juga argumen "bumi datar"</li>
+                        <li>Jika yakin ekonomi Indonesia buruk, cari argumen mengapa bisa tidak buruk</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-list">
+                    <strong>Hasilnya:</strong>
+                    <ul>
+                        <li>Kamu akan punya pemahaman yang lebih utuh</li>
+                        <li>Lebih mudah bersosialisasi tanpa kehilangan identitas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="section7">
+                <h2 data-number="📈">Efek jangka panjang dari semua ini</h2>
+                
+                <div class="success-formula">
+                    <strong>🎯 Hasil yang Dicapai:</strong>
+                    <ul>
+                        <li>Respon cepat, tepat, dan akurat (dari sistem 2 → sistem 1)</li>
+                        <li>Naiknya IQ secara alami</li>
+                        <li>Lebih mudah belajar hal baru, lebih adaptif, dan lebih siap sukses</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="section8">
+                <h2 data-number="💡">Inti Pesan</h2>
+                
+                <div class="quote">
+                    🎯 "IQ itu bukan takdir. Tapi latihan dan metode berpikir yang benar bisa membuat IQ-mu naik, bahkan melampaui orang yang dari awal lebih tinggi skornya."
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🧠 Rangkuman ini disusun berdasarkan metode Ferry Irwandi untuk meningkatkan kapasitas otak</p>
+            <p>🎯 Untuk keperluan edukasi dan pengembangan diri</p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <span class="nav-dot active" onclick="scrollToSection('section1')"></span>
+        <span class="nav-dot" onclick="scrollToSection('section2')"></span>
+        <span class="nav-dot" onclick="scrollToSection('section3')"></span>
+        <span class="nav-dot" onclick="scrollToSection('section4')"></span>
+        <span class="nav-dot" onclick="scrollToSection('section5')"></span>
+        <span class="nav-dot" onclick="scrollToSection('section6')"></span>
+        <span class="nav-dot" onclick="scrollToSection('section7')"></span>
+        <span class="nav-dot" onclick="scrollToSection('section8')"></span>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Scroll to top of content area
+            document.querySelector('.content-grid').scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Update active menu item
+            updateActiveMenuItem(sectionId);
+            
+            // Update navigation dots
+            updateNavigationDots(sectionId);
+        }
+
+        // Update active menu item
+        function updateActiveMenuItem(activeSection) {
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            document.querySelector(`[data-section="${activeSection}"]`).classList.add('active');
+        }
+
+        // Update navigation dots
+        function updateNavigationDots(activeSection) {
+            document.querySelectorAll('.nav-dot').forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            const sectionIndex = parseInt(activeSection.replace('section', '')) - 1;
+            document.querySelectorAll('.nav-dot')[sectionIndex].classList.add('active');
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.querySelector('.scroll-to-top');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+
+        // Add hover effects to sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                if (this.classList.contains('active')) {
+                    this.style.transform = 'translateY(-5px)';
+                }
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                if (this.classList.contains('active')) {
+                    this.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize first section
+        document.addEventListener('DOMContentLoaded', function() {
+            scrollToSection('section1');
+        });
+    </script>
+</body>
+</html>
